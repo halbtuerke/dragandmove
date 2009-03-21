@@ -38,4 +38,8 @@
         return NSDragOperationNone;
     }
 }
+
+- (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
+    return YES;
+}
 @end
