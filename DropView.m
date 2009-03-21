@@ -24,6 +24,16 @@
     [image compositeToPoint:(myBounds.origin) operation:NSCompositeSourceOver];
 }
 
+- (void)setImage:(NSImage *)newImage {
+    NSImage *temp = [newImage retain];
+    [_myImage release];
+    _myImage = temp;
+}
+
+- (NSImage *)image {
+    return _myImage;
+}
+
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
     if ((NSDragOperationGeneric & [sender draggingSourceOperationMask]) == NSDragOperationGeneric) {
         return NSDragOperationGeneric;
