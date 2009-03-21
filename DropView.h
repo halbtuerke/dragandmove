@@ -10,7 +10,10 @@
 
 
 @interface DropView : NSView {
-
+    NSImage *_myImage;
 }
+
+- (void)setImage:(NSImage *)newImage;
+- (NSImage *)image;
 
 @end
