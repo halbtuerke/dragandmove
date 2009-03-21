@@ -18,7 +18,10 @@
 }
 
 - (void)drawRect:(NSRect)rect {
-    // Drawing code here.
+    NSRect myBounds = [self bounds];
+    NSImage *image = [self image];
+    [super drawRect:rect];
+    [image compositeToPoint:(myBounds.origin) operation:NSCompositeSourceOver];
 }
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
