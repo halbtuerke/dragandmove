@@ -86,8 +86,9 @@
     
     [self setNeedsDisplay:YES];
     return YES;
-    
-    
-    
+}
+
+- (void)concludeDragOperation:(id <NSDraggingInfo>)sender {
+    [self setNeedsDisplay:YES];
 }
 @end
