@@ -23,4 +23,19 @@
     // Drawing code here.
 }
 
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
+    if ((NSDragOperationGeneric & [sender draggingSourceOperationMask]) == NSDragOperationGeneric) {
+        return NSDragOperationGeneric;
+    } else {
+        return NSDragOperationNone;
+    }
+}
+
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender {
+    if ((NSDragOperationGeneric & [sender draggingSourceOperationMask]) == NSDragOperationGeneric) {
+        return NSDragOperationGeneric;
+    } else {
+        return NSDragOperationNone;
+    }
+}
 @end
