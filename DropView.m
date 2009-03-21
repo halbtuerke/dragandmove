@@ -89,4 +89,9 @@
 - (void)concludeDragOperation:(id <NSDraggingInfo>)sender {
     [self setNeedsDisplay:YES];
 }
+
+- (void)dealloc {
+    [self unregisterDraggedTypes];
+    [super dealloc];
+}
 @end
